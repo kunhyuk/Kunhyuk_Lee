@@ -10,11 +10,15 @@ function PostsPage(props) {
 	function loaded() {
 		const mapped = post.map((posts, i) => { 
 			const title = posts.title
+            const author = posts.userId
+            const body = posts.body
 			return(
 				<>
+                Author: {author}
 					<Link to={`/${i}`} key={i}>
 						<h2>{i+1}. {title}</h2>
 					</Link>
+                Body: {body}
 				</>
 			)
 		})
