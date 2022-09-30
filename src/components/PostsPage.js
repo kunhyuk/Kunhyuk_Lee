@@ -7,7 +7,6 @@ function PostsPage(props) {
 	useEffect(() => {
 		props.posts.then(setPost)}, [props.posts])
 
-	
 	function loaded() {
 		const mapped = post.map((posts, i) => { 
 			const title = posts.title
@@ -25,7 +24,6 @@ function PostsPage(props) {
 			</>
 		)
 	}
-
 	function loading() {
 		return <h1>Loading...</h1>
 	}

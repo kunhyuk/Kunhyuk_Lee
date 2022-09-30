@@ -18,7 +18,7 @@ root.render(
     <Router>
         <Routes>
             <Route path ='/' element={<PostsPage posts={posts}/>} />
-            
+            <Route path = '/:userId/' element={<AuthorPage posts = {posts}/>} />
         </Routes>
     </Router>
 );
