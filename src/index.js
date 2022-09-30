@@ -1,17 +1,24 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import { BrowserRouter as Router } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
+import AuthorPage from './components/AuthorPage';
+import PostsPage from './components/PostsPage';
+
+const url = "https://jsonplaceholder.typicode.com/posts"
+const posts = (async () => {
+    const response = await fetch(url)
+    const data = await response.json()
+    return data
+}) ()
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
+    <Router>
+        <Routes>
+            <Route path ='/' element={<PostsPage posts={posts}/>} />
+            
+        </Routes>
+    </Router>
 );
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
