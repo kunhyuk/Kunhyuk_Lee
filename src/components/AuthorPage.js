@@ -12,7 +12,9 @@ function AuthorPage(props) {
         return(
 			<>
 			Title: {post[userId].title}<br />
-
+            Author: {post[userId].userId}<br />
+            Body: {post[userId].body}<br />
+            Post Id: {post[userId].id}<br />
 			</>
 	)	
 }

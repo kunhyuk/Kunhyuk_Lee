@@ -16,10 +16,10 @@ const posts = (async () => {
 const sameAuthors = (async () => {
     const response = await fetch(url)
     const data = await response.json()
-    if (data.userId === posts().data) {
+    
+    if (data.userId === posts.userId) {
         return data
     }
-    
 }) ()
 
 

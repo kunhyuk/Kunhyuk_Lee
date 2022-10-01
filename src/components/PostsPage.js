@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom"
-
 function PostsPage(props) {
 	console.log(props)
 	const [post, setPost] = useState("")
